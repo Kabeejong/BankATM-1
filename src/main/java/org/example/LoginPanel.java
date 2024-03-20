@@ -43,24 +43,24 @@ public class LoginPanel extends JPanel {
         add(usernameField, gbc);
 
         JLabel passwordLabel = new JLabel("Enter Password:");
-        gbc.gridx = 1;
+        gbc.gridx = 0;
         gbc.gridy = 2;
         add(passwordLabel, gbc);
 
         passwordField = new JPasswordField(20);
         gbc.gridx = 1;
-        gbc.gridy = 1;
+        gbc.gridy = 2;
         add(passwordField, gbc);
 
         JButton loginButton = new JButton("login");
-        loginButton.addActionListener(new L0ginButtonListener());
+        loginButton.addActionListener(new LoginButtonListener());
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 1;
         add(loginButton, gbc);
 
         JButton registerButton = new JButton("Register");
-        registerButton.addActionListener(new RegisterButtonListerner());
+        registerButton.addActionListener(new RegisterButtonListener());
         gbc.gridx = 1;
         gbc.gridy = 3;
         add(registerButton, gbc);
@@ -74,7 +74,7 @@ public class LoginPanel extends JPanel {
                 try {
                     User user = DatabaseHelper.getUserByUsername(username);
                     if (user != null && user.getPassword().equals(password)) {
-                        app.setUser();
+                        //app.setUser();
                         app.showPanel("Dashboard");
                     }else {
                         JOptionPane.showMessageDialog(LoginPanel.this, "Invalid Username or Password!", " Login Error", JOptionPane.ERROR_MESSAGE);
@@ -89,7 +89,7 @@ public class LoginPanel extends JPanel {
         private class RegisterButtonListener implements ActionListener {
         @Override
             public void actionPerformed(ActionEvent e){
-            app.throwPanel("Registration");
+            app.showPanel("Registration");
         }
     }
 

@@ -41,10 +41,15 @@ public class ATMApp extends JFrame {
                 mainPanel.remove(dashboardPanel);
             }
 
-            dashboardPanel = new DashboardPanel();
+            dashboardPanel = new DashboardPanel(this, user);
             mainPanel.add(dashboardPanel, "Dashboard");
             showPanel("Dashboard");
         }
+    }
+
+    public static void main(String[] args) {
+        ATMApp app = new ATMApp();
+        app.setVisible(true);
     }
 }
 
