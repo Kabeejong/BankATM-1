@@ -36,6 +36,8 @@ public class ATMApp extends JFrame {
     public void setUser(User user) {
         this.user = user;
 
+
+
         if (user != null) {
             if (dashboardPanel != null) {
                 mainPanel.remove(dashboardPanel);
