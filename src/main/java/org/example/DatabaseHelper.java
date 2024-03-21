@@ -7,9 +7,9 @@ import java.util.List;
 
 public class DatabaseHelper {
 
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432?bankDB";
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/bankDB";
     private static final String DB_USER ="postgres";
-    private static final String DB_PASSWORD ="ephraIms@ccount";
+    private static final String DB_PASSWORD ="Kabeejong";
 
     //a method to get a user by their username
     public static User getUserByUsername(String username) throws SQLException {

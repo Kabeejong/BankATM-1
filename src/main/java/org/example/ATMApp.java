@@ -4,10 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ATMApp extends JFrame {
-    private JPanel mainPanel;
-    private LoginPanel loginPanel;
+    private final JPanel mainPanel;
+    private final LoginPanel loginPanel;
     private DashboardPanel dashboardPanel;
-    private RegistrationPanel registrationPanel;
+    private final RegistrationPanel registrationPanel;
     private User user;
 
     public ATMApp() {
@@ -19,10 +19,10 @@ public class ATMApp extends JFrame {
 
         mainPanel = new JPanel(new CardLayout());
         loginPanel = new LoginPanel(this);
-        registrationPanel = new RegistrationPanel();
+        registrationPanel = new RegistrationPanel(this);
 
         mainPanel.add(loginPanel, "login");
-        // mainPanel.add(registrationPanel, "Registration");
+        mainPanel.add(registrationPanel, "Registration");
 
         add(mainPanel, BorderLayout.CENTER);
         showPanel("Login");
